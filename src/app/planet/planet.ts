@@ -1,7 +1,7 @@
 export class Planet {
-    id: string;
+    id: number;
     name: string;
-    distanceToSun: string;
+    distanceToSun: number;
     orbitAroundSun: boolean;
     gravity: number;
     numberOfSatellites: number;
