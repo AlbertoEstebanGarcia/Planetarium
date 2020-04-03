@@ -23,6 +23,10 @@ export class AppComponent implements OnInit {
     console.log(this.planets);
 
     this.dataSource = new MatTableDataSource<Planet>(this.planets);
+  }
 
+  filter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

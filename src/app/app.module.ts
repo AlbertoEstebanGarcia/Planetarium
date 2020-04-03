@@ -9,7 +9,9 @@ import {
   MatMenuModule,
   MatProgressSpinnerModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatInputModule,
+  MatFormFieldModule
 } from '@angular/material';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -36,6 +38,8 @@ import { AppComponent } from './app.component';
     MatDividerModule,
     MatProgressSpinnerModule,
     FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
