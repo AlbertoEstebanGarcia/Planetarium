@@ -1,8 +1,9 @@
 export class Planet {
     id: number;
     name: string;
-    distanceToSun: number;
-    orbitAroundSun: boolean;
+    distance: number;
     gravity: number;
-    numberOfSatellites: number;
+    satellites: number;
+    radius: number;
+    imageUrl: string;
 }

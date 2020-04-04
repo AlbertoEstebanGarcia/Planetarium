@@ -10,19 +10,15 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class AppComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'distanceToSun', 'orbitAroundSun', 'gravity', 'numberOfSatellites'];
-  title = 'Planetarium';
-  planets: Planet[];
-
-  dataSource;
+  displayedColumns: string[] = ['id', 'name', 'distance', 'gravity', 'satellites', 'imageUrl'];
+  dataSource: any;
 
   constructor(private planetService: PlanetService) { }
 
   ngOnInit() {
-    this.planets = this.planetService.getPlanets();
-    console.log(this.planets);
-
-    this.dataSource = new MatTableDataSource<Planet>(this.planets);
+    this.planetService.getPlanets().subscribe(planets => {
+      this.dataSource = new MatTableDataSource<Planet>(planets);
+    });
   }
 
   filter(event: Event) {
