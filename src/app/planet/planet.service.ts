@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Planet } from './planet';
 import { environment } from 'src/environments/environment';
@@ -17,29 +17,18 @@ export class PlanetService {
     return this.http.get<Planet[]>(url);
   }
 
-  getPlanetsById(id: number) {
-    const url = environment.apiUrl + 'planets/' + id;
-    return this.http.get<Planet[]>(url);
-  }
-
-  getPlanetsByName(name: string) {
-    const url = environment.apiUrl + 'planets/' + name;
-    return this.http.get<Planet[]>(url);
-  }
-
   addPlanet(planet: Planet) {
     const url = environment.apiUrl + 'planets';
-    return this.http.post<Planet[]>(url, planet);
+    return this.http.post<Planet>(url, planet);
   }
 
   updatePlanet(planet: Planet) {
-    const url = environment.apiUrl + 'planets';
-    return this.http.put<Planet[]>(url, planet);
+    const url = environment.apiUrl + 'planets/' + planet._id;
+    return this.http.put<Planet>(url, planet);
   }
 
-  deletePlanet(id: number) {
-    const url = environment.apiUrl + 'planets/' + id;
-    return this.http.delete<Planet[]>(url);
-
+  deletePlanet(planet: Planet) {
+    const url = environment.apiUrl + 'planets/' + planet._id;
+    return this.http.delete(url);
   }
 }

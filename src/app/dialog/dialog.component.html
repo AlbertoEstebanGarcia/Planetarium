@@ -1,0 +1,40 @@
+<div class="dialog">
+    <mat-dialog-content [formGroup]="form">
+    
+        <mat-form-field>
+            <mat-label>Planet Name</mat-label>
+            <input matInput formControlName="name" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Distance</mat-label>
+            <input matInput formControlName="distance" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Gravity</mat-label>
+            <input matInput formControlName="gravity" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Satellites</mat-label>
+            <input matInput formControlName="satellites" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Radius</mat-label>
+            <input matInput formControlName="radius" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>ImageUrl</mat-label>
+            <input matInput formControlName="imageUrl" required>
+        </mat-form-field>
+        
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button class="mat-raised-button"(click)="close()">Close</button>
+        <button class="mat-raised-button mat-primary"(click)="save()" [disabled]="!form.valid">Save</button>
+    </mat-dialog-actions>
+</div>

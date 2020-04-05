@@ -18,6 +18,10 @@ h1 {
 .table-container {
   padding: 2%;
 
+  button {
+    float: right;
+  }
+
   .mat-form-field {
     font-size: 14px;
     width: 100%;
@@ -31,4 +35,19 @@ h1 {
     width: 30px; 
     height: 30px; 
   }
+}
+
+.dialog {
+  .mat-form-field {
+    display: block;
+  }
+
+  .mat-dialog-content {
+    width: 600px;
+    overflow-y: hidden !important;
+  }
+}
+
+.mat-icon {
+  cursor: pointer;
 }

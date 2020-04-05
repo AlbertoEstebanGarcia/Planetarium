@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  apiUrl: 'https://planetariumserver-salzburg.herokuapp.com/'
+  apiUrl: 'http://localhost:8080/'
 };
 
 /*

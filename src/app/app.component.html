@@ -15,6 +15,9 @@
 </mat-menu>
 
 <div class="table-container">
+
+  <button mat-raised-button color="primary" (click)="addPlanet()">Add Planet</button>
+
   <mat-form-field>
     <mat-label>Search</mat-label>
     <input matInput (keyup)="filter($event)" placeholder="Earth, Mars...">
@@ -22,9 +25,9 @@
 
   <table mat-table [dataSource]="dataSource">
     
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="_id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let planet"> {{planet.id}} </td>
+      <td mat-cell *matCellDef="let planet"> {{planet._id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
@@ -50,6 +53,14 @@
     <ng-container matColumnDef="imageUrl">
       <th mat-header-cell *matHeaderCellDef> Image </th>
       <td mat-cell *matCellDef="let planet"> <img [src]="planet.imageUrl"/> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let planet" class="action-link">
+        <mat-icon aria-hidden="false" aria-label="Edit" (click)="editPlanet(planet)">edit</mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Delete" (click)="removePlanet(planet)">delete</mat-icon>        
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
