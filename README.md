@@ -9,9 +9,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     npm install
     ng serve
 
-## Development server*emphasized text*
+## Development server
 
 The project is deployed in Heroku in the following URL  [https://planetarium-salzburg.herokuapp.com/](http://https://planetarium-salzburg.herokuapp.com/)
 
-# Author
+## Author
 Alberto Esteban García
